@@ -1,0 +1,13 @@
+  /* 
+  
+dark mode={
+    #161616-sidebar
+  #131313-contentbar
+};
+
+light mode={
+  #fff-sidebar,
+  #f3f4f6-contentbar
+}
+
+  */
