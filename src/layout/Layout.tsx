@@ -1,20 +1,12 @@
-import { ReactNode } from "react";
-import { useSelector } from "react-redux";
+import { memo, ReactNode } from "react";
+import { MainLayout } from "../styled/MainLayout.styled";
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 function Layout({ children }: LayoutProps) {
-  const theme: boolean = useSelector(
-    (state: any) => state.themeSwitchReducer.theme
-  );
-
-  return (
-    <div className={`flex ${theme ? "bg-[#f3f4f6]" : "bg-[#131313]"}`}>
-      {children}
-    </div>
-  );
+  return <MainLayout>{children}</MainLayout>;
 }
 
-export default Layout;
+export default memo(Layout);

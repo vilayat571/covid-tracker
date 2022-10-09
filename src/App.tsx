@@ -1,13 +1,13 @@
 import Contentbar from "./components/Contentbar/Contentbar";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Header from "./components/Header/Header";
 import Layout from "./layout/Layout";
 
 function App() {
   return (
-      <Layout>
-        <Sidebar />
-        <Contentbar />
-      </Layout>
+    <Layout>
+      <Header />
+      <Contentbar />
+    </Layout>
   );
 }
 

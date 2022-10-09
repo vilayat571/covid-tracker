@@ -1,20 +1,25 @@
-import { useSelector } from "react-redux";
-import Navbar from "../../atoms/Contentbar/Navbar";
+import { memo } from "react";
+import ActiveCard from "../../atoms/Contentbar/ActiveCard";
+import ConfirmedCounts from "../../atoms/Contentbar/ConfirmedCounts";
+import DeathCard from "../../atoms/Contentbar/DeathCard";
+import Imagefile from "../../atoms/Contentbar/Imagefile";
+import { CardDivStyled } from "../../styled/Carddiv.styled";
+import { ContentBarStyled } from "../../styled/Contentbar.styled";
+import { ContentLayout } from "../../styled/ContentLayout.styled";
 
 function Contentbar() {
-  const theme: boolean = useSelector(
-    (state: any) => state.themeSwitchReducer.theme
-  );
-
   return (
-    <div
-      className={`w-2/3 h-screen flex flex-col ${
-        theme ? "bg-[#f3f4f6] text-black" : "bg-[#131313] text-white"
-      }`}
-    >
-      <Navbar />
-    </div>
+    <ContentBarStyled>
+      <ContentLayout>
+        <CardDivStyled>
+          <ConfirmedCounts />
+          <DeathCard />
+          <ActiveCard />
+        </CardDivStyled>
+      </ContentLayout>
+      <Imagefile />
+    </ContentBarStyled>
   );
 }
 
-export default Contentbar;
+export default memo(Contentbar);

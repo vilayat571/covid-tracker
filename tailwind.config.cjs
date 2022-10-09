@@ -9,9 +9,6 @@ module.exports = {
   ],
   darkmode: false,
   theme: {
-       dark:{
-        base:'#161616'
-       },
     screens: {
       sm: '200px',
       md: '768px',
