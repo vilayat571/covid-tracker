@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const CardDivStyled = styled.div`
-  width: 75%;
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-gap: 20px;

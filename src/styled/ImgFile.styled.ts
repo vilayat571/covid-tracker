@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const ImgFile = styled.img`
-  width: 75%;
+  width: 60%;
   height: auto;
   border-radius: 10px;
   margin: 0px 20px;

@@ -7,7 +7,7 @@ import { CardDivStyled } from "../../styled/Carddiv.styled";
 import { ContentBarStyled } from "../../styled/Contentbar.styled";
 import { ContentLayout } from "../../styled/ContentLayout.styled";
 
-function Contentbar() {
+function Contentbar(): JSX.Element  {
   return (
     <ContentBarStyled>
       <ContentLayout>
