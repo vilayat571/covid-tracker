@@ -7,7 +7,7 @@ export const HeaderLayout = styled.div`
   justify-content: center;
   align-items: center;
   height: auto;
-  background-color: #f3f4ff;
+  background-color: #f3f4f6;
   color: #000;
   padding: 30px 0px;
   @media (max-width: 1000px) {
