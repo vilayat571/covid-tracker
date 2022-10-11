@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AsyncThunk, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface IConfirmedReducer {
   loading: boolean;
@@ -12,16 +12,17 @@ const initialState: IConfirmedReducer = {
   confirmedCounts: [],
 };
 
-export const getConfirmedCountsedCounts = createAsyncThunk(
-  "/getConfirmedCounts/",
-  async (query?: string) => {
-    const country: string = query !== undefined ? query : "Azerbaijan";
-    const url: string = `https://covid19.mathdro.id/api/countries/${country}/confirmed`;
-    const res: Response = await fetch(url);
-    const confirmedCounts: any = await res.json();
-    return confirmedCounts;
-  }
-);
+export const getConfirmedCountsedCounts: AsyncThunk<
+  any,
+  string | undefined,
+  {}
+> = createAsyncThunk("/getConfirmedCounts/", async (query?: string) => {
+  const country: string = query !== undefined ? query : "Azerbaijan";
+  const url: string = `https://covid19.mathdro.id/api/countries/${country}/confirmed`;
+  const res: Response = await fetch(url);
+  const confirmedCounts: any = await res.json();
+  return confirmedCounts;
+});
 
 const confirmedCountsReducer = createSlice({
   name: "confirmedCountsReducer",

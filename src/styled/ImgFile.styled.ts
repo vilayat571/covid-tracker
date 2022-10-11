@@ -1,4 +1,3 @@
-//@ts-ignore
 import styled from "styled-components";
 
 export const ImgFile = styled.img`

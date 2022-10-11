@@ -8,7 +8,7 @@ export default function Imagefile() {
   const isLoading = useSelector((state: any) => state.imgReducer.loading);
 
   if (isLoading) {
-    return <LoadingStyled>Loading..</LoadingStyled>
+    return <LoadingStyled>Loading..</LoadingStyled>;
   }
 
   return (

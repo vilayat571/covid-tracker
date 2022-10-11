@@ -1,15 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getConfirmedCountsedCounts } from "../../redux/reducers/confirmedCountsReducer";
 import { fetchCountries } from "../../redux/reducers/countriesReducer";
 import { getDeathsCounts } from "../../redux/reducers/deathsReducer";
 import { getImgFile } from "../../redux/reducers/imgReducer";
+import { useAppDispatch } from "../../redux/store/store";
 import { FormLayout } from "../../styled/Formlayout.styled";
 import { SelectStyled } from "../../styled/Select.styled";
 import Country from "./Country";
 
 interface IForm {
-  query: string | null;
+  query: string;
   change(e: React.ChangeEvent<HTMLSelectElement>): void;
   countries: {}[];
 }
@@ -21,7 +22,7 @@ interface ICountry {
 }
 
 function Form() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [query, setQuery] = useState<IForm["query"]>("Azerbaijan");
 
@@ -34,13 +35,9 @@ function Form() {
   };
 
   useEffect(() => {
-    //@ts-ignore
     dispatch(getConfirmedCountsedCounts(query));
-    //@ts-ignore
     dispatch(getDeathsCounts(query));
-    //@ts-ignore
     dispatch(fetchCountries());
-    //@ts-ignore
     dispatch(getImgFile(query));
   }, [query]);
 

@@ -1,13 +1,14 @@
 import { memo, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getConfirmedCountsedCounts } from "../../redux/reducers/confirmedCountsReducer";
 import { getDeathsCounts } from "../../redux/reducers/deathsReducer";
+import { useAppDispatch } from "../../redux/store/store";
 import { CardStyled } from "../../styled/Card.styled";
 import { today } from "../../utils/dateTime";
 import { intlNumber } from "../../utils/numberUtils";
 
 function ActiveCard() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const deathsCounts = useSelector(
     (state: any) => state.deathsReducer.deathsCounts
@@ -23,9 +24,7 @@ function ActiveCard() {
   );
 
   useEffect(() => {
-    /* @ts-ignore */
     dispatch(getDeathsCounts());
-    //@ts-ignore
     dispatch(getConfirmedCountsedCounts());
   }, []);
 

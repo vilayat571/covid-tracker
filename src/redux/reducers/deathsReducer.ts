@@ -18,7 +18,7 @@ export const getDeathsCounts = createAsyncThunk(
     const country: string = query !== undefined ? query : "Azerbaijan";
     const url: string = `https://covid19.mathdro.id/api/countries/${country}/deaths`;
     const res: Response = await fetch(url);
-    const deathsCounts:any = await res.json();
+    const deathsCounts: any = await res.json();
     return deathsCounts;
   }
 );
